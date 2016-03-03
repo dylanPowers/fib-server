@@ -1,13 +1,16 @@
+FIB_PORT = 8080
+
 run: build
 	if ! docker ps -a | grep -w fib-server -q; then  \
 		docker create                                  \
 					--name fib-server                        \
+					--publish $(FIB_PORT):8080               \
 					--restart unless-stopped                 \
 					-v /etc/timezone:/etc/timezone           \
 					--workdir /opt/fib/                      \
 					fib-server;                              \
 	else																						 \
-		$(MAKE) stop                                   \
+		$(MAKE) stop;                                  \
 	fi
 	docker cp src/fib fib-server:/opt/fib
 	docker start fib-server

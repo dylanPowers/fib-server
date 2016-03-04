@@ -21,3 +21,21 @@ func TestFibonacciOne(t *testing.T) {
 		t.Errorf("sequence[1] should == 1. Result: %d", (*sequence)[1])
 	}
 }
+
+func TestFibonacciTwo(t *testing.T) {
+	t.Log("Fibonacci(2) should return a sequence with 0 1 1")
+	sequence := Fibonacci(2)
+	if len(*sequence) != 3 {
+		t.Errorf("Sequence len != 3. Result: %d", len(*sequence))
+	} else if (*sequence)[2] != 1 {
+		t.Errorf("sequence[2] should == 2. Result: %d", (*sequence)[2])
+	}
+}
+
+func TestFibonacciEight(t *testing.T) {
+	t.Log("Fibonacci(8) should have 21 at element 8")
+	sequence := Fibonacci(8)
+	if (*sequence)[8] != 21 {
+		t.Errorf("sequence[8] should == 21. Result: %d", (*sequence)[8])
+	}
+}

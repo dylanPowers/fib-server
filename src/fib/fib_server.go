@@ -7,6 +7,9 @@ import (
 	"strconv"
 )
 
+// FibServerHandler is the http server request handler for the Fibonacci server.
+// Typically it's used as http.HandlerFunc(FibServerHandler) to create an
+// http.Handler object.
 func FibServerHandler(w http.ResponseWriter, req *http.Request) {
 	if req.URL.Path != "/fib.json" {
 		http.Error(w, req.URL.Path+" was not found", http.StatusNotFound)

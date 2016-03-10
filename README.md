@@ -7,7 +7,7 @@ Fibonacci Server
 * Make
 
 
-## Simple Make Commands
+## Typical Make Commands
 ### make run
 Use this command to start the server. It is currently configured to listen at 
 port 8080. This command will also automatically build the docker image if 
@@ -34,5 +34,5 @@ This will attempt to rebuild the docker image even if the image already exists.
 ## Configurations
 ### Published Server Port
 The published server port is configured from the FIB_PORT variable in the
-makefile. This can be easily found and tweaked if needed at the top of 
-the makefile.
+makefile. This can be easily found at the top of the makefile. 
+Run `make remove-all` after changing.

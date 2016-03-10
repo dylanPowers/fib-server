@@ -22,17 +22,17 @@ build:
 	fi
 
 
-force-build:
-	docker build --tag fib-server src/
+force-build: remove-all
+	docker build --tag fib-server .
 
 
 remove-all: stop
-	docker rm fib-server
-	docker rmi fib-server
+	docker rm fib-server 2> /dev/null | true
+	docker rmi fib-server 2> /dev/null | true
 
 
 stop:
-	docker stop fib-server
+	docker stop fib-server | true
 
 
 test: build

@@ -2,7 +2,7 @@ package fib
 
 import "errors"
 
-// Fibonacci returns a splice containing the Fibonacci sequence for the given n.
+// Fibonacci returns an array containing the Fibonacci sequence for the given n.
 // Any negative value will return an error.
 func Fibonacci(n int) (*[]int, error) {
 	if n < 0 {

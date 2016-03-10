@@ -12,7 +12,7 @@ run: build
 	else																						 \
 		$(MAKE) stop;                                  \
 	fi
-	docker cp src/fib fib-server:/opt/fib
+	docker cp src fib-server:/opt/fib/src
 	docker start fib-server
 
 
@@ -39,7 +39,7 @@ test: build
 	docker run                          \
 		--rm                              \
 		--workdir /opt/fib                \
-		-v $(shell pwd)/src/fib:/opt/fib  \
+		-v $(shell pwd)/src:/opt/fib/src  \
 		fib-server                        \
 		go test .
 

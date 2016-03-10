@@ -15,10 +15,10 @@ ENV GOROOT /opt/go
 
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-COPY fib /opt/fib
+COPY src /opt/fib/src
 
 RUN useradd --system --shell /usr/sbin/nologin fib
 USER fib
 
 EXPOSE 8080
-CMD go run main.go
+CMD go run /opt/fib/src/main.go
